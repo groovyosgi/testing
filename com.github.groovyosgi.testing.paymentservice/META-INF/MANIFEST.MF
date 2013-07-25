@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Payment Service API
+Bundle-SymbolicName: com.github.groovyosgi.testing.paymentservice
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Money Bank
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pizza Service Implementation
+Bundle-SymbolicName: com.github.groovyosgi.testing.pizzaservice.impl
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.github.groovyosgi.testing.pizzaservice.impl.Activator
+Bundle-Vendor: Luigis Pizza
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.osgi.framework

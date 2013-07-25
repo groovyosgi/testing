@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pizza Service API
+Bundle-SymbolicName: com.github.groovyosgi.testing.pizzaservice
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Luigis Pizza
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

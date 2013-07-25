@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.groovyosgi</groupId>
+	<artifactId>testing</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<tycho.version>0.18.0</tycho.version>
+	</properties>
+
+	<name>OSGi Groovy Testing parent</name>
+
+	<modules>
+		<module>com.github.groovyosgi.testing.paymentservice</module>
+		<module>com.github.groovyosgi.testing.pizzaservice</module>
+		<module>com.github.groovyosgi.testing.pizzaservice.impl</module>
+		<module>com.github.groovyosgi.testing.pizzaservice.test</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>eclipse-juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+		<repository>
+			<id>eclipse-orbit</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20130517111416/repository/</url>
+		</repository>
+		<repository>
+			<id>groovy-eclipse</id>
+			<layout>p2</layout>
+			<url>http://dist.springsource.org/release/GRECLIPSE/e4.3/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+
