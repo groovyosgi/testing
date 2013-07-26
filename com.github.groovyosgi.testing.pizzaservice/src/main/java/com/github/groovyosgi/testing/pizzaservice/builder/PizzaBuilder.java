@@ -14,7 +14,7 @@ public class PizzaBuilder {
 
     private Sauce sauce;
 
-    public Pizza get() {
+    public Pizza build() {
         if (sauce == null) {
             throw new IllegalArgumentException("Please choose a sauce.");
         }

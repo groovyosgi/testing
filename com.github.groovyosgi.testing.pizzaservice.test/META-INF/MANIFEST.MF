@@ -7,7 +7,10 @@ Bundle-Vendor: Luigis Pizza
 Fragment-Host: com.github.groovyosgi.testing.pizzaservice.impl;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.junit
-Import-Package: groovy.lang,
+Import-Package: com.github.groovyosgi.testing.pizzaservice,
+ com.github.groovyosgi.testing.pizzaservice.builder,
+ com.github.groovyosgi.testing.pizzaservice.model,
+ groovy.lang,
  org.codehaus.groovy.reflection,
  org.codehaus.groovy.runtime,
  org.codehaus.groovy.runtime.callsite,
