@@ -4,7 +4,7 @@ Bundle-Name: Pizza Service Groovy Test Fragment
 Bundle-SymbolicName: com.github.groovyosgi.testing.pizzaservice.test
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Luigis Pizza
-Fragment-Host: com.github.groovyosgi.testing.pizzaservice.impl;bundle-version="1.0.0"
+Fragment-Host: com.github.groovyosgi.testing.pizzaservice.impl
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.junit
 Import-Package: groovy.lang,

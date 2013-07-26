@@ -1,4 +1,4 @@
-package com.github.groovyosgi.testing.pizzaservice.test;
+package com.github.groovyosgi.testing.pizzaservice.test.builder;
 
 import static org.hamcrest.CoreMatchers.*
 import static org.junit.Assert.*
@@ -6,7 +6,7 @@ import static org.junit.matchers.JUnitMatchers.*
 
 import org.junit.Test
 
-import com.github.groovyosgi.testing.pizzaservice.builder.PizzaBuilder
+import com.github.groovyosgi.testing.pizzaservice.builder.PizzaBuilder;
 import com.github.groovyosgi.testing.pizzaservice.model.Pizza.Sauce
 
 class PizzaBuilderTest {
