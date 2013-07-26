@@ -8,13 +8,11 @@ import org.junit.After
 import org.junit.Before
 import org.osgi.framework.BundleContext
 import org.osgi.framework.ServiceReference
-import org.osgi.framework.ServiceRegistration
 
 abstract class OSGiTest {
 
 	private static BundleContext bundleContext
-
-	Map<String, ServiceRegistration> registeredServices = [:]
+	private def registeredServices = [:]
 
 	protected abstract BundleContext getBundleContext()
 
