@@ -11,8 +11,8 @@ import org.osgi.framework.ServiceReference
 
 abstract class OSGiTest {
 
-	private static BundleContext bundleContext
-	private def registeredServices = [:]
+	static BundleContext bundleContext
+	def registeredServices = [:]
 
 	protected abstract BundleContext getBundleContext()
 
