@@ -6,4 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.github.groovyosgi.testing.pizzaservice.impl.Activator
 Bundle-Vendor: Luigis Pizza
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Import-Package: org.osgi.framework
+Import-Package: com.github.groovyosgi.testing.paymentservice,
+ com.github.groovyosgi.testing.pizzaservice,
+ com.github.groovyosgi.testing.pizzaservice.builder,
+ com.github.groovyosgi.testing.pizzaservice.model,
+ org.osgi.framework,
+ org.osgi.service.component;version="1.2.0"
+Service-Component: OSGI-INF/PizzaSerive.xml

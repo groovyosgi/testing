@@ -5,3 +5,6 @@ Bundle-SymbolicName: com.github.groovyosgi.testing.pizzaservice
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Luigis Pizza
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: com.github.groovyosgi.testing.pizzaservice,
+ com.github.groovyosgi.testing.pizzaservice.builder,
+ com.github.groovyosgi.testing.pizzaservice.model
