@@ -39,6 +39,6 @@ class PizzaServiceTest extends OSGiTest{
 
     @Override
     protected BundleContext getBundleContext() {
-        return Activator.bundleContext
+        return Activator.context
     }
 }
