@@ -10,7 +10,7 @@ import org.osgi.framework.BundleContext
 import com.github.groovyosgi.testing.OSGiTest
 import com.github.groovyosgi.testing.paymentservice.CreditCardPaymentService
 import com.github.groovyosgi.testing.pizzaservice.PizzaService
-import com.github.groovyosgi.testing.pizzaservice.test.context.BundleContextProvider
+import com.github.groovyosgi.testing.pizzaservice.impl.Activator
 
 class PizzaServiceTest extends OSGiTest{
 
@@ -39,6 +39,6 @@ class PizzaServiceTest extends OSGiTest{
 
     @Override
     protected BundleContext getBundleContext() {
-        return BundleContextProvider.bundleContext
+        return Activator.bundleContext
     }
 }
