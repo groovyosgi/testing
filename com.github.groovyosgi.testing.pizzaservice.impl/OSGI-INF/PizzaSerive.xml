@@ -11,5 +11,7 @@
 		<provide
 			interface="com.github.groovyosgi.testing.pizzaservice.PizzaService" />
 	</service>
+ <reference bind="setPizzaBaker" cardinality="1..1" interface="com.github.groovyosgi.testing.pizzaservice.PizzaBaker" name="PizzaBaker" policy="static" unbind="unsetPizzaBaker"/>
+ <reference bind="setEventAdmin" cardinality="1..1" interface="org.osgi.service.event.EventAdmin" name="EventAdmin" policy="static" unbind="unsetEventAdmin"/>
 
 </scr:component>

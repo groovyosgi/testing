@@ -11,5 +11,7 @@ Import-Package: com.github.groovyosgi.testing.paymentservice,
  com.github.groovyosgi.testing.pizzaservice.builder,
  com.github.groovyosgi.testing.pizzaservice.model,
  org.osgi.framework,
- org.osgi.service.component;version="1.2.0"
-Service-Component: OSGI-INF/PizzaSerive.xml
+ org.osgi.service.component;version="1.2.0",
+ org.osgi.service.event
+Service-Component: OSGI-INF/PizzaSerive.xml,
+ OSGI-INF/PizzaBaker.xml

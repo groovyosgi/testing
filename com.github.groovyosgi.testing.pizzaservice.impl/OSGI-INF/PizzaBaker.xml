@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component
+	xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="PizzaBaker"
+	immediate="true">
+	
+	
+	<implementation class="com.github.groovyosgi.testing.pizzaservice.impl.PizzaBakerImpl" />
+ <service>
+    <provide interface="com.github.groovyosgi.testing.pizzaservice.PizzaBaker"/>
+ </service>
+
+</scr:component>
