@@ -11,39 +11,45 @@ import org.osgi.framework.ServiceReference
 
 abstract class OSGiTest {
 
-	static BundleContext bundleContext
-	def registeredServices = [:]
+    static BundleContext bundleContext
+    def registeredServices = [:]
 
-	protected abstract BundleContext getBundleContext()
+    protected abstract BundleContext getBundleContext()
 
-	@Before
-	void bindBundleContext() {
-		bundleContext = getBundleContext()
-		assertNotNull("Bundle context must not be null for OSGi tests.", bundleContext)
-	}
+    @Before
+    void bindBundleContext() {
+        bundleContext = getBundleContext()
+        assertNotNull("Bundle context must not be null for OSGi tests.", bundleContext)
+    }
 
-	def getService(Class clazz){
-		ServiceReference<?> serviceReference = bundleContext.getServiceReference(clazz.name)
+    def <T> T getService(Class<T> clazz){
+        ServiceReference<?> serviceReference = bundleContext.getServiceReference(clazz.name)
 
-		assertThat serviceReference, is(notNullValue())
+        assertThat serviceReference, is(notNullValue())
 
-		return bundleContext.getService(serviceReference)
-	}
+        return bundleContext.getService(serviceReference)
+    }
 
-	def registerMock(def mock) {
-		registeredServices.put(mock.interfaceName, bundleContext.registerService(mock.interfaceName, mock, null))
-	}
 
-	def unregisterMock(def mock) {
-		registeredServices.get(mock.interfaceName).unregister()
-		registeredServices.remove(mock.interfaceName)
-	}
+    def registerMock(def mock, Class mockedInterface, Hashtable properties = [:]) {
+        mock.metaClass.getInterfaceName << { -> mockedInterface.name }
+        registerMock(mock, properties)
+    }
 
-	@After
-	void unregisterMocks(){
-		registeredServices.each() { interfaceName, service ->
-			service.unregister()
-		}
-		registeredServices.clear()
-	}
+    def registerMock(def mock, Hashtable properties = [:]) {
+        registeredServices.put(mock.interfaceName, bundleContext.registerService(mock.interfaceName, mock, properties))
+    }
+
+    def unregisterMock(def mock) {
+        registeredServices.get(mock.interfaceName).unregister()
+        registeredServices.remove(mock.interfaceName)
+    }
+
+    @After
+    void unregisterMocks(){
+        registeredServices.each() { interfaceName, service ->
+            service.unregister()
+        }
+        registeredServices.clear()
+    }
 }

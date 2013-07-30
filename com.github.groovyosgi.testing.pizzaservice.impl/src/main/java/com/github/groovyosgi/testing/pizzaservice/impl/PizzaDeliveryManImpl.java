@@ -2,6 +2,7 @@ package com.github.groovyosgi.testing.pizzaservice.impl;
 
 import java.util.HashMap;
 
+import org.osgi.service.component.ComponentContext;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventAdmin;
 import org.osgi.service.event.EventHandler;
@@ -34,7 +35,11 @@ public class PizzaDeliveryManImpl implements PizzaDeliveryMan, EventHandler {
     private void sendPizzaDeliveredEvent(int id) {
         HashMap<String, Object> properties = new HashMap<>();
         properties.put(EVENT_PROPERTY_ID, id);
-        eventAdmin.postEvent(new Event(EVENT_PROPERTY_PIZZA_DELIVERED, properties));
+        eventAdmin.postEvent(new Event(EVENT_TOPIC_PIZZA_DELIVERED, properties));
+    }
+
+    void activate(ComponentContext componentContext) {
+
     }
 
     void setEventAdmin(EventAdmin eventAdmin) {
