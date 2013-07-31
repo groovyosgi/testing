@@ -55,17 +55,16 @@ class PizzaDeliveryManTest extends OSGiTest{
 
         eventAdmin.postEvent(new Event(PizzaService.EVENT_TOPIC_PIZZA_DELIVERY, properties))
 
-        waitFor({pizzaHasBeenDelivered}, 1000)
+        waitFor({pizzaHasBeenDelivered})
 
         assertThat pizzaHasBeenDelivered, is(true)
     }
 
-    private waitFor(Closure<?> condition, int timeout) {
+    private waitFor(Closure<?> condition, int timeout = 1000, int sleepTime = 50) {
         def waitingTime = 0;
         while(!condition() && waitingTime < timeout) {
-            waitingTime += 50
-            println("Sleeping " + waitingTime)
-            sleep 10
+            waitingTime += sleepTime
+            sleep sleepTime
         }
     }
 
