@@ -31,9 +31,6 @@ class PizzaServiceTest extends OSGiTest{
             }
         ] as CreditCardPaymentService
 
-
-        paymentService.metaClass.getInterfaceName << { -> CreditCardPaymentService.class.name }
-
         registerMock(paymentService)
 
         PizzaService pizzaService = getService(PizzaService)

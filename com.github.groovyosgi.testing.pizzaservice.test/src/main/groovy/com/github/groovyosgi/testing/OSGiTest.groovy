@@ -24,20 +24,14 @@ abstract class OSGiTest {
 
     def <T> T getService(Class<T> clazz){
         ServiceReference<?> serviceReference = bundleContext.getServiceReference(clazz.name)
-
         assertThat serviceReference, is(notNullValue())
-
         return bundleContext.getService(serviceReference)
     }
 
-
-    def registerMock(def mock, Class mockedInterface, Hashtable properties = [:]) {
-        mock.metaClass.getInterfaceName << { -> mockedInterface.name }
-        registerMock(mock, properties)
-    }
-
     def registerMock(def mock, Hashtable properties = [:]) {
-        registeredServices.put(mock.interfaceName, bundleContext.registerService(mock.interfaceName, mock, properties))
+        def interfaceName = mock.class.interfaces?.find({it})?.name
+        assertThat interfaceName, is(notNullValue())
+        registeredServices.put(interfaceName, bundleContext.registerService(interfaceName, mock, properties))
     }
 
     def unregisterMock(def mock) {

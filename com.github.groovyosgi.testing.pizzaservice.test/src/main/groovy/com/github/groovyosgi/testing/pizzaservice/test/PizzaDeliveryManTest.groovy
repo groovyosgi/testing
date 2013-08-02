@@ -20,7 +20,7 @@ import com.github.groovyosgi.testing.pizzaservice.model.Address
 import com.github.groovyosgi.testing.pizzaservice.model.CustomerInfo
 import com.github.groovyosgi.testing.pizzaservice.model.Pizza.Sauce
 
-class PizzaDeliveryManTest extends OSGiTest{
+class PizzaDeliveryManTest extends OSGiTest {
 
     EventAdmin eventAdmin
 
@@ -42,7 +42,7 @@ class PizzaDeliveryManTest extends OSGiTest{
                 assertThat event.topic, is(equalTo(PizzaDeliveryMan.EVENT_TOPIC_PIZZA_DELIVERED))
                 assertThat event.getProperty(PizzaDeliveryMan.EVENT_PROPERTY_ID), is(1)
             }
-        ] as EventHandler, EventHandler, eventHandlerProperties)
+        ] as EventHandler, eventHandlerProperties)
 
         def customer = new CustomerInfo("Max Mustermann", new Address(), 54325548936 as short)
         def pizza = PizzaBuilder.newPizza().withSauce(Sauce.BBQ).build()
@@ -61,7 +61,7 @@ class PizzaDeliveryManTest extends OSGiTest{
     }
 
     private waitFor(Closure<?> condition, int timeout = 1000, int sleepTime = 50) {
-        def waitingTime = 0;
+        def waitingTime = 0
         while(!condition() && waitingTime < timeout) {
             waitingTime += sleepTime
             sleep sleepTime
