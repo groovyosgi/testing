@@ -70,14 +70,6 @@
 				</dependencies>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler.version}</version>
-			</plugin>
-			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-surefire-plugin</artifactId>
 				<version>${tycho.version}</version>
@@ -95,7 +87,7 @@
 							<type>eclipse-plugin</type>
 							<artifactId>org.eclipse.equinox.event</artifactId>
 							<version>0.0.0</version>
-						</dependency>						
+						</dependency>
 					</dependencies>
 					<bundleStartLevel>
 						<bundle>
@@ -105,7 +97,7 @@
 						</bundle>
 						<bundle>
 							<id>org.eclipse.equinox.event</id>
-							<level>1</level>
+							<level>2</level>
 							<autoStart>true</autoStart>
 						</bundle>
 					</bundleStartLevel>
