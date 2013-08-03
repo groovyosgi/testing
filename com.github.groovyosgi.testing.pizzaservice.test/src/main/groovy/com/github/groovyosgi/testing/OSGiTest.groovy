@@ -7,7 +7,6 @@ import static org.junit.matchers.JUnitMatchers.*
 import org.junit.After
 import org.junit.Before
 import org.osgi.framework.BundleContext
-import org.osgi.framework.ServiceReference
 
 abstract class OSGiTest {
 
@@ -19,11 +18,11 @@ abstract class OSGiTest {
     @Before
     void bindBundleContext() {
         bundleContext = getBundleContext()
-        assertNotNull("Bundle context must not be null for OSGi tests.", bundleContext)
+        assertThat bundleContext, is(notNullValue())
     }
 
     def <T> T getService(Class<T> clazz){
-        ServiceReference<?> serviceReference = bundleContext.getServiceReference(clazz.name)
+        def serviceReference = bundleContext.getServiceReference(clazz.name)
         assertThat serviceReference, is(notNullValue())
         return bundleContext.getService(serviceReference)
     }

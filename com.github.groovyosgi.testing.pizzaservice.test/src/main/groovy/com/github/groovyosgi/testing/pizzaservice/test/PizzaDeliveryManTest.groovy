@@ -38,9 +38,9 @@ class PizzaDeliveryManTest extends OSGiTest {
 
         registerMock([
             handleEvent: { Event event ->
-                pizzaHasBeenDelivered = true
                 assertThat event.topic, is(equalTo(PizzaDeliveryMan.EVENT_TOPIC_PIZZA_DELIVERED))
                 assertThat event.getProperty(PizzaDeliveryMan.EVENT_PROPERTY_ID), is(1)
+                pizzaHasBeenDelivered = true
             }
         ] as EventHandler, eventHandlerProperties)
 
