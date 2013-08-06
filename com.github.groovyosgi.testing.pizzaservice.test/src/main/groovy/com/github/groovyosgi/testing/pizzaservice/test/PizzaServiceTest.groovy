@@ -20,13 +20,16 @@ import com.github.groovyosgi.testing.pizzaservice.model.Pizza.Sauce
 class PizzaServiceTest extends OSGiTest{
 
     @Test
-    public void test() {
+    public void assertHandleTransactionIsCalled() {
 
         def transactionCalled = false
 
         def paymentService = [
-            handleTransaction: {
-                println "handleTransaction called"
+            handleTransaction: { String companyId, long creditCardNumber, String cardHolderName, float price ->
+                assertThat companyId, is(equalTo('LUIGIS_PIZZA_SERVICE'))
+                assertThat creditCardNumber, is(524030324560)
+                assertThat cardHolderName, is(equalTo("Max Mustermann"))
+                assertThat price, is(5f)
                 transactionCalled = true
             }
         ] as CreditCardPaymentService
@@ -35,7 +38,7 @@ class PizzaServiceTest extends OSGiTest{
 
         PizzaService pizzaService = getService(PizzaService)
         def pizza = PizzaBuilder.newPizza().withSauce(Sauce.BBQ).build()
-        def customerInfo = new CustomerInfo("Max Mustermann", new Address(), 524030324560 as short)
+        def customerInfo = new CustomerInfo("Max Mustermann", new Address(), 524030324560)
         pizzaService.placeOrder(new Order(pizza, customerInfo))
 
         assertThat transactionCalled, is(true)

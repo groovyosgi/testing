@@ -3,10 +3,10 @@ package com.github.groovyosgi.testing.pizzaservice.model;
 public class CustomerInfo {
 
     private final Address address;
-    private final short creditCardNumber;
+    private final long creditCardNumber;
     private final String name;
 
-    public CustomerInfo(String name, Address address, short creditCardNumber) {
+    public CustomerInfo(String name, Address address, long creditCardNumber) {
         this.name = name;
         this.address = address;
         this.creditCardNumber = creditCardNumber;
@@ -16,7 +16,7 @@ public class CustomerInfo {
         return address;
     }
 
-    public short getCreditCardNumber() {
+    public long getCreditCardNumber() {
         return creditCardNumber;
     }
 
