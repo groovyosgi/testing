@@ -12,9 +12,9 @@ import com.github.groovyosgi.testing.pizzaservice.PizzaService;
 import com.github.groovyosgi.testing.pizzaservice.model.Order;
 import com.github.groovyosgi.testing.pizzaservice.model.Pizza;
 
-public class PizzaSeriveImpl implements PizzaService {
+public class PizzaServiceImpl implements PizzaService {
 
-    private static final String TAG = PizzaSeriveImpl.class.getName();
+    private static final String TAG = PizzaServiceImpl.class.getName();
     private CreditCardPaymentService creditCardPaymentService;
     private EventAdmin eventAdmin;
     private PizzaBaker pizzaBaker;

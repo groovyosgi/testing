@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
-	name="com.github.groovyosgi.testing.pizzaservice.impl" immediate="true">
+	name="com.github.groovyosgi.testing.pizzaservice.impl.PizzaServiceImpl" immediate="true">
 	<implementation
-		class="com.github.groovyosgi.testing.pizzaservice.impl.PizzaSeriveImpl" />
+		class="com.github.groovyosgi.testing.pizzaservice.impl.PizzaServiceImpl" />
 	<reference bind="setCreditCardPaymentService" cardinality="1..1"
 		interface="com.github.groovyosgi.testing.paymentservice.CreditCardPaymentService"
 		name="CreditCardPaymentService" policy="static" unbind="unsetCreditCardPaymentService" />

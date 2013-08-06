@@ -13,6 +13,6 @@ Import-Package: com.github.groovyosgi.testing.paymentservice,
  org.osgi.framework,
  org.osgi.service.component;version="1.2.0",
  org.osgi.service.event
-Service-Component: OSGI-INF/PizzaSerive.xml,
+Service-Component: OSGI-INF/PizzaService.xml,
  OSGI-INF/PizzaBaker.xml,
  OSGI-INF/PizzaDeliveryMan.xml
