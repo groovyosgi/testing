@@ -17,10 +17,10 @@ import com.github.groovyosgi.testing.pizzaservice.model.CustomerInfo
 import com.github.groovyosgi.testing.pizzaservice.model.Order
 import com.github.groovyosgi.testing.pizzaservice.model.Pizza.Sauce
 
-class PizzaServiceTest extends OSGiTest{
+class PizzaServiceTest extends OSGiTest {
 
     @Test
-    public void assertHandleTransactionIsCalled() {
+    void assertHandleTransactionIsCalled() {
 
         def transactionCalled = false
 
