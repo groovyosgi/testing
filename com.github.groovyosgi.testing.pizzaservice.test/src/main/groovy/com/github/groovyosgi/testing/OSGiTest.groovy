@@ -24,7 +24,7 @@ abstract class OSGiTest {
     def <T> T getService(Class<T> clazz){
         def serviceReference = bundleContext.getServiceReference(clazz.name)
         assertThat serviceReference, is(notNullValue())
-        return bundleContext.getService(serviceReference)
+        bundleContext.getService(serviceReference)
     }
 
     def registerMock(def mock, Hashtable properties = [:]) {
