@@ -15,5 +15,5 @@ $ mvn clean install
 * Import the bundles and the test fragment via "File->Import->General->Existing Projects into Workspace".
 * In order to execute the tests from Eclipse, execute `PizzaDeliveryManTest.launch` and `PizzaServiceTest.launch` via "Run As".
 
-## EclipseCon Europe / OSGi Community Event 2013 Slides:
+## EclipseCon Europe / OSGi Community Event 2013 Slides
 [http://groovyosgi.github.io/testing/](http://groovyosgi.github.io/testing/)
